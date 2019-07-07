@@ -140,12 +140,13 @@ require get_template_directory() . '/inc/custom-header.php';
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/_s-functions.php';
 
 /**
  * Functions which enhance the theme by hooking into WordPress.
  */
-require get_template_directory() . '/inc/template-functions.php';
+require get_template_directory() . '/inc/_s-template-functions.php';
+require get_template_directory() . '/inc/_s-template-hookss.php';
 
 /**
  * Customizer additions.

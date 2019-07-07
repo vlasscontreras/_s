@@ -4,12 +4,15 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
+ * @since 1.0.0
  * @package _s
  */
 
-if ( ! function_exists( '_s_posted_on' ) ) :
+if ( ! function_exists( '_s_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
+	 *
+	 * @since 1.0.0
 	 */
 	function _s_posted_on() {
 		$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -33,11 +36,13 @@ if ( ! function_exists( '_s_posted_on' ) ) :
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 	}
-endif;
+}
 
-if ( ! function_exists( '_s_posted_by' ) ) :
+if ( ! function_exists( '_s_posted_by' ) ) {
 	/**
 	 * Prints HTML with meta information for the current author.
+	 *
+	 * @since 1.0.0
 	 */
 	function _s_posted_by() {
 		$byline = sprintf(
@@ -49,11 +54,13 @@ if ( ! function_exists( '_s_posted_by' ) ) :
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
 	}
-endif;
+}
 
-if ( ! function_exists( '_s_entry_footer' ) ) :
+if ( ! function_exists( '_s_entry_footer' ) ) {
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
+	 *
+	 * @since 1.0.0
 	 */
 	function _s_entry_footer() {
 		// Hide category and tag text for pages.
@@ -109,14 +116,16 @@ if ( ! function_exists( '_s_entry_footer' ) ) :
 			'</span>'
 		);
 	}
-endif;
+}
 
-if ( ! function_exists( '_s_post_thumbnail' ) ) :
+if ( ! function_exists( '_s_post_thumbnail' ) ) {
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
+	 *
+	 * @since 1.0.0
 	 */
 	function _s_post_thumbnail() {
 		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
@@ -145,4 +154,4 @@ if ( ! function_exists( '_s_post_thumbnail' ) ) :
 		<?php
 		endif; // End is_singular().
 	}
-endif;
+}
