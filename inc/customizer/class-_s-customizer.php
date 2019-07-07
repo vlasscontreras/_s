@@ -15,6 +15,8 @@
 class _s_Customizer {
 	/**
 	 * Setup class.
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		add_action( 'customize_register', array( $this, 'register' ) );
@@ -24,6 +26,7 @@ class _s_Customizer {
 	/**
 	 * Add postMessage support for site title and description for the Theme Customizer.
 	 *
+	 * @since 1.0.0
 	 * @param WP_Customize_Manager $wp_customize Theme Customizer object.
 	 */
 	public function register( $wp_customize ) {
@@ -47,6 +50,7 @@ class _s_Customizer {
 	/**
 	 * Render the site title for the selective refresh partial.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public function partial_blogname() {
@@ -56,6 +60,7 @@ class _s_Customizer {
 	/**
 	 * Render the site tagline for the selective refresh partial.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public function partial_blogdescription() {
@@ -64,8 +69,12 @@ class _s_Customizer {
 
 	/**
 	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
+	 *
+	 * @since 1.0.0
 	 */
 	public function preview_js() {
 		wp_enqueue_script( '_s-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 	}
 }
+
+new _s_Customizer();

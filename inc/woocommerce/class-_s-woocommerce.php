@@ -17,6 +17,8 @@
 class _s_WooCommerce {
 	/**
 	 * Setup class
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
@@ -54,6 +56,8 @@ class _s_WooCommerce {
 	/**
 	 * WooCommerce setup function.
 	 *
+	 * @since 1.0.0
+	 *
 	 * @link https://docs.woocommerce.com/document/third-party-custom-theme-compatibility/
 	 * @link https://github.com/woocommerce/woocommerce/wiki/Enabling-product-gallery-features-(zoom,-swipe,-lightbox)-in-3.0.0
 	 *
@@ -69,6 +73,7 @@ class _s_WooCommerce {
 	/**
 	 * WooCommerce specific scripts & stylesheets.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public function scripts() {
@@ -92,6 +97,7 @@ class _s_WooCommerce {
 	/**
 	 * Add 'woocommerce-active' class to the body tag.
 	 *
+	 * @since 1.0.0
 	 * @param  array $classes CSS classes applied to the body tag.
 	 * @return array $classes modified to include 'woocommerce-active' class.
 	 */
@@ -104,6 +110,7 @@ class _s_WooCommerce {
 	/**
 	 * Products per page.
 	 *
+	 * @since 1.0.0
 	 * @return integer number of products.
 	 */
 	public function products_per_page() {
@@ -113,6 +120,7 @@ class _s_WooCommerce {
 	/**
 	 * Product gallery thumnbail columns.
 	 *
+	 * @since 1.0.0
 	 * @return integer number of columns.
 	 */
 	public function thumbnail_columns() {
@@ -122,6 +130,7 @@ class _s_WooCommerce {
 	/**
 	 * Default loop columns on product archives.
 	 *
+	 * @since 1.0.0
 	 * @return integer products per row.
 	 */
 	public function loop_columns() {
@@ -131,6 +140,7 @@ class _s_WooCommerce {
 	/**
 	 * Related Products Args.
 	 *
+	 * @since 1.0.0
 	 * @param array $args related products args.
 	 * @return array $args related products args.
 	 */
@@ -148,6 +158,7 @@ class _s_WooCommerce {
 	/**
 	 * Product columns wrapper.
 	 *
+	 * @since 1.0.0
 	 * @return  void
 	 */
 	public function product_columns_wrapper() {
@@ -158,6 +169,7 @@ class _s_WooCommerce {
 	/**
 	 * Product columns wrapper close.
 	 *
+	 * @since 1.0.0
 	 * @return  void
 	 */
 	public function product_columns_wrapper_close() {
@@ -169,6 +181,7 @@ class _s_WooCommerce {
 	 *
 	 * Wraps all WooCommerce content in wrappers which match the theme markup.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public function wrapper_before() {
@@ -183,6 +196,7 @@ class _s_WooCommerce {
 	 *
 	 * Closes the wrapping divs.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public function wrapper_after() {
@@ -209,6 +223,7 @@ class _s_WooCommerce {
 	 *
 	 * Ensure cart contents update when products are added to the cart via AJAX.
 	 *
+	 * @since 1.0.0
 	 * @param array $fragments Fragments to refresh via AJAX.
 	 * @return array Fragments to refresh via AJAX.
 	 */
@@ -225,6 +240,7 @@ class _s_WooCommerce {
 	 *
 	 * Displayed a link to the cart including the number of items present and the cart total.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public static function cart_link() {
@@ -245,6 +261,7 @@ class _s_WooCommerce {
 	/**
 	 * Display Header Cart.
 	 *
+	 * @since 1.0.0
 	 * @return void
 	 */
 	public static function header_cart() {
@@ -271,3 +288,5 @@ class _s_WooCommerce {
 		<?php
 	}
 }
+
+new _s_WooCommerce();

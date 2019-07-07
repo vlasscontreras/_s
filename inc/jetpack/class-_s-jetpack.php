@@ -17,6 +17,8 @@
 class _s_Jetpack {
 	/**
 	 * Setup class
+	 *
+	 * @since 1.0.0
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'setup' ) );
@@ -24,6 +26,8 @@ class _s_Jetpack {
 
 	/**
 	 * Jetpack setup function.
+	 *
+	 * @since 1.0.0
 	 *
 	 * See: https://jetpack.com/support/infinite-scroll/
 	 * See: https://jetpack.com/support/responsive-videos/
@@ -60,6 +64,8 @@ class _s_Jetpack {
 
 	/**
 	 * Custom render function for Infinite Scroll.
+	 *
+	 * @since 1.0.0
 	 */
 	public static function infinite_scroll_render() {
 		while ( have_posts() ) {
@@ -73,3 +79,5 @@ class _s_Jetpack {
 		}
 	}
 }
+
+new _s_Jetpack();
