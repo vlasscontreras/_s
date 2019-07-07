@@ -8,6 +8,19 @@
  * @package _s
  */
 
+if ( ! function_exists( 'wp_body_open' ) ) {
+	/**
+	 * Shim for sites older than 5.2.
+	 *
+	 * @link https://core.trac.wordpress.org/ticket/12563
+	 *
+	 * @since 1.0.0
+	 */
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
 if ( ! function_exists( '_s_posted_on' ) ) {
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
