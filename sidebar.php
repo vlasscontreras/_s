@@ -10,6 +10,8 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+do_action( '_s_before_sidebar' );
 ?>
 
 <aside id="secondary" class="widget-area">

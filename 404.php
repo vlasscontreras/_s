@@ -11,7 +11,12 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
+		<?php do_action( '_s_before_main' ); ?>
+
 		<main id="main" class="site-main">
+
+			<?php do_action( '_s_before_error_404' ); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -53,7 +58,12 @@ get_header();
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
+			<?php do_action( '_s_after_error_404' ); ?>
+
 		</main><!-- #main -->
+
+		<?php do_action( '_s_after_main' ); ?>
+
 	</div><!-- #primary -->
 
 <?php

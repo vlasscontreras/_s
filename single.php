@@ -11,25 +11,33 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
+		<?php do_action( '_s_before_main' ); ?>
+
 		<main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', get_post_type() );
+				do_action( '_s_before_single_post' );
 
-			the_post_navigation();
+				get_template_part( 'template-parts/content', 'single' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				/**
+				 * After single post.
+				 *
+				 * @hooked _s_display_comments - 10
+				 */
+				do_action( '_s_after_single_post' );
 
-		endwhile; // End of the loop.
-		?>
+			endwhile; // End of the loop.
+			?>
 
 		</main><!-- #main -->
+
+		<?php do_action( '_s_after_main' ); ?>
+
 	</div><!-- #primary -->
 
 <?php

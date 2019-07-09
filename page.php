@@ -16,23 +16,28 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
+
+		<?php do_action( '_s_before_main' ); ?>
+
 		<main id="main" class="site-main">
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+			<?php
+			while ( have_posts() ) :
+				the_post();
 
-			get_template_part( 'template-parts/content', 'page' );
+				do_action( '_s_page_before' );
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+				get_template_part( 'template-parts/content', 'page' );
 
-		endwhile; // End of the loop.
-		?>
+				do_action( '_s_page_after' );
+
+			endwhile; // End of the loop.
+			?>
 
 		</main><!-- #main -->
+
+		<?php do_action( '_s_after_main' ); ?>
+
 	</div><!-- #primary -->
 
 <?php
