@@ -128,6 +128,10 @@ if ( ! function_exists( '_s_page_header' ) ) {
 				the_archive_title( '<h1 class="page-title">', '</h1>' );
 				the_archive_description( '<div class="taxonomy-description">', '</div>' );
 
+			elseif ( is_home() && ! is_front_page() ) :
+
+				print( '<h1 class="page-title screen-reader-text">' . single_post_title() . '</h1>' );
+
 			elseif ( is_page() ) :
 
 				the_title( '<h1 class="page-title">', '</h1>' );
